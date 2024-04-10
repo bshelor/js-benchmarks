@@ -23,8 +23,8 @@ const event = {
   key16: 'value16',
   key17: 'value17',
   key18: 'value18',
-  // key19: 'value19',
-  // key20: 'value20',
+  key19: 'value19',
+  key20: 'value20',
 };
 console.log('Number of keys in object - ', Object.keys(event).length);
 
@@ -33,6 +33,9 @@ suite.add('Object copying by destructuring', () => {
     ...event,
     ...{ properties: 'value' }
   };
+})
+.add('Object.assign', () => {
+  Object.assign({}, event, { properties: 'value' });
 })
 .add('Individually setting all keys of existing object on new object', () => {
   const newObj = {};
